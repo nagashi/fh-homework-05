@@ -1,5 +1,4 @@
 class Person
-  attr_reader :name
 
   def initialize (arg)
     @name = arg.chomp
@@ -49,13 +48,11 @@ class Person
 
   def undo
     if @history.empty?
-      @name = @original  
-      
+      @name = @original       
     else
       @history.pop
       @name = @history[@history.length - 1] 
     end
     self
   end
-
 end 
